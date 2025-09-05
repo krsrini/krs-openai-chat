@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KRS Local OpenAI Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Markdown & Highlight -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="KRS Logo" />
+    <h2>KRS Local Chat with OpenAI</h2>
+  </header>
+
+  <div id="controls">
+    <select id="model-select">
+      <option value="gpt-4o-mini" selected>gpt-4o-mini</option>
+      <option value="gpt-4o">gpt-4o</option>
+      <option value="gpt-4.1">gpt-4.1</option>
+      <option value="gpt-3.5-turbo">gpt-3.5-turbo</option>
+    </select>
+    <input type="text" id="input" placeholder="Type your question..." />
+    <button id="send">Send</button>
+    <button id="clear" title="Clear chat">Clear</button>
+    <button id="logout" title="Logout">Logout</button>
+  </div>
+
+  <div id="chatbox"></div>
+  <div id="thinking"><span class="dots">Thinking</span></div>
+</body>
+</html>

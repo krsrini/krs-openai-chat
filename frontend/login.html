@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login • KRS Local OpenAI Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="auth.js" defer></script>
+  <!-- Google Identity Services (optional) -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="auth-card">
+    <h3>Welcome to KRS Local Chat</h3>
+    <p>Login or sign up to continue.</p>
+
+    <div class="auth-row">
+      <label>Username</label>
+      <input id="username" type="text" placeholder="you@example.com or a handle" />
+    </div>
+    <div class="auth-row">
+      <label>Password</label>
+      <input id="password" type="password" placeholder="••••••••" />
+    </div>
+    <div class="auth-actions">
+      <button id="btn-login">Login</button>
+      <button id="btn-signup" style="background:#475569">Sign Up</button>
+    </div>
+
+    <hr class="hr-muted"/>
+
+    <div id="g_id_onload"
+      data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+      data-auto_prompt="false"
+      data-callback="handleGoogle"
+    ></div>
+    <div class="g_id_signin"
+      data-type="standard"
+      data-size="large"
+      data-theme="outline"
+      data-text="signin_with"
+      data-shape="rectangular"
+      data-logo_alignment="left">
+    </div>
+
+    <p id="auth-error" style="color:#b91c1c; margin-top:10px;"></p>
+  </div>
+</body>
+</html>
