@@ -2,6 +2,7 @@ import sqlite3
 from contextlib import contextmanager
 from .config import settings
 from werkzeug.security import generate_password_hash, check_password_hash
+#from werkzeug.security import generate_password_hash
 
 @contextmanager
 def get_db():
@@ -36,6 +37,8 @@ def init_db():
 
 
 def create_user(username, password=None, provider="local"):
+    pwd_hash = generate_password_hash(password, method="pbkdf2:sha256") if password else None
+    # Save user in DB
     with get_db() as db:
         pwd_hash = generate_password_hash(password) if password else None
         db.execute("INSERT INTO users (username, password_hash, provider) VALUES (?, ?, ?)",
